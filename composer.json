@@ -1,0 +1,19 @@
+{
+    "name": "tradingio/one-share",
+    "description": "A cross platform file sharing application",
+    "type": "project",
+    "license": "GNU",
+    "autoload": {
+        "psr-4": {
+            "Tradingio\\OneShare\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Abdulbasit",
+            "email": "basttyy@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
