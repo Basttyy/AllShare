@@ -1,11 +1,11 @@
 {
-    "name": "tradingio/one-share",
+    "name": "basttyy/one-share",
     "description": "A cross platform file sharing application",
     "type": "project",
     "license": "GNU",
     "autoload": {
         "psr-4": {
-            "Tradingio\\OneShare\\": "app/"
+            "App\\": "App/"
         }
     },
     "authors": [
@@ -14,6 +14,20 @@
             "email": "basttyy@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {}
+    "scripts": {
+        "dev": "./node_modules/.bin/nodemon server.php 127.0.0.1:23458",
+        "start": "php server.php 127.0.0.1:23458"
+    },
+    "require": {
+        "react/socket": "^1.12",
+        "react/http": "^1.8",
+        "react/async": "^4.0",
+        "wyrihaximus/react-http-middleware-html-compress": "^2.1",
+        "wyrihaximus/react-http-middleware-session": "^4.1",
+        "vlucas/phpdotenv": "^5.5",
+        "ratchet/pawl": "^0.4.1",
+        "monolog/monolog": "^2.0",
+        "christoph-kluge/reactphp-http-cors-middleware": "^2.0",
+        "christoph-kluge/reactphp-http-response-compression-middleware": "^1.0"
+    }
 }

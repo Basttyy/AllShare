@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test WebSocket</title>
+</head>
+<body>
+<input id="input">
+<div id="messages">
+
+</div>
+<script>
+    let url = window.location.origin.replace("http", "ws").concat("/realtime-feed?token=shfe8ewf9hf9ew83f3h237&client_id=browser-1");
+    console.log(url);
+    var ws = new WebSocket(url);
+
+    ws.onopen = x => console.log('opened', x);
+
+    var messages = document.getElementById('messages');
+    ws.onmessage = m => {
+        var newMsg = document.createElement('div');
+        newMsg.innerHTML = m.data;
+        messages.appendChild(newMsg);
+        console.log('message', m);
+    };
+
+    var input = document.getElementById('input');
+    input.onkeydown = e => {
+        if (e.keyCode == 13) {
+            ws.send(input.value);
+            input.value = '';
+        }
+    };
+</script>
+
+</body>
+</html>
